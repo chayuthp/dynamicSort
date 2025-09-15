@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Cards</title>
+    <!-- https://github.com/SortableJS/Sortable ##Link sortable for drag&drop##-->  
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js" defer></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" defer></script> -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            const columns = document.querySelectorAll(".column");
+            columns.forEach(column => {
+                new Sortable(column, {
+                    group: "shared",
+                    animation: 150,
+                    ghostClass: "bg-gray-300"
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+    <div class="grid grid-cols-4 gap-4 w-full max-w-6xl">
+        <div class="column bg-white p-4 shadow-lg rounded-lg space-y-2">
+            <div class="p-4 bg-red-500 text-white rounded-lg shadow-md cursor-pointer">Task 1A</div>
+            <div class="p-4 bg-green-500 text-white rounded-lg shadow-md cursor-pointer">Task 1B</div>
+            <div class="p-4 bg-yellow-500 text-white rounded-lg shadow-md cursor-pointer">Task 1C</div>
+            <div class="p-4 bg-purple-500 text-white rounded-lg shadow-md cursor-pointer">Task 1D</div>
+        </div>
+        <div class="column bg-white p-4 shadow-lg rounded-lg space-y-2">
+            <div class="p-4 bg-red-500 text-white rounded-lg shadow-md cursor-pointer">Task 2A</div>
+            <div class="p-4 bg-green-500 text-white rounded-lg shadow-md cursor-pointer">Task 2B</div>
+            <div class="p-4 bg-yellow-500 text-white rounded-lg shadow-md cursor-pointer">Task 2C</div>
+            <div class="p-4 bg-purple-500 text-white rounded-lg shadow-md cursor-pointer">Task 2D</div>
+        </div>
+        <div class="column bg-white p-4 shadow-lg rounded-lg space-y-2">
+            <div class="p-4 bg-red-500 text-white rounded-lg shadow-md cursor-pointer">Task 3A</div>
+            <div class="p-4 bg-green-500 text-white rounded-lg shadow-md cursor-pointer">Task 3B</div>
+            <div class="p-4 bg-yellow-500 text-white rounded-lg shadow-md cursor-pointer">Task 3C</div>
+            <div class="p-4 bg-purple-500 text-white rounded-lg shadow-md cursor-pointer">Task 3D</div>
+        </div>
+        <div class="column bg-white p-4 shadow-lg rounded-lg space-y-2">
+            <div class="p-4 bg-red-500 text-white rounded-lg shadow-md cursor-pointer">Task 4A</div>
+            <div class="p-4 bg-green-500 text-white rounded-lg shadow-md cursor-pointer">Task 4B</div>
+            <div class="p-4 bg-yellow-500 text-white rounded-lg shadow-md cursor-pointer">Task 4C</div>
+            <div class="p-4 bg-purple-500 text-white rounded-lg shadow-md cursor-pointer">Task 4D</div>
+        </div>
+    </div>
+</body>
+</html>
